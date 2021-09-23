@@ -16,7 +16,7 @@ import sys
 from emailconfig import EmailConfig
 from job import Job
 from backup import Backup, BackupFile, BackupDirectory
-from backupcfg import job_msg, usage_msg, logfile, email_config, jobs
+from backupcfg import job_msg, usage_msg, logfile, email_config, jobs, emailurl
 
 def main():
     '''
@@ -49,7 +49,8 @@ def main():
             job.set_backup(backup)
            
             job.set_logfile(logfile)
-            job.set_email_config(email_config)
+            #job.set_email_config(email_config)
+            job.set_emailurl(emailurl)
             
             # perform backup
             if not job.errors:

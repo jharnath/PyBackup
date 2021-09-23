@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 
+#EVERYTHING ON LINE 100 - 1005 NEEDS TO BE MOVED 4 SPACE TO THE RIGHT, HAVE FUN.
+
 # import modules
+import json, requests   
 import pathlib
 import smtplib
 import os
@@ -83,11 +86,33 @@ class Job(object):
             logmsg = self.datestring + " " + self.name + " " + msg
             file.write(logmsg + "\n")
         file.close()
-
+                                                                                                                                                           
+    def set_emailurl(self, emailurl):
+        '''
+        Set emailurl
+        '''
+        
+        self.emailurl = emailurl
+     
+    
+    def do_email(self):  
+        
+                 #global message
+   #endpoint = https://endpoint.com/JsonEmail"
+    hdrs = {'Content-type': 'application/json', 'Accept': 'text/plain'}
+    msg  = "Backup Job: %s \n" % job  
+    for item in self.message:
+        msg = msg + item + '\n'
+    body = json.dumps({'message': msg })
+    r = requests.post(self.emailurl, data=body, headers=hdrs)
+ 
+ 
+ 
+        '''
     def do_email(self):
-        '''
-        Output all log message as email.
-        '''
+        
+       # Output all log message as email.
+        
         
         header = 'To: ' + self.email_config.recipient + '\n' + 'From: ' + self.email_config.user + '\n' + 'Subject: Backup Error ' + self.name + '\n'
         msg = header + '\n'
@@ -102,7 +127,9 @@ class Job(object):
         smtpserver.login(self.email_config.user, self.email_config.pwd)
         smtpserver.sendmail(self.email_config.user, self.email_config.recipient, msg)
         smtpserver.quit()
-
+'''
+        
+        
     def do_backup(self):
         '''
         Backup file system object to destination.

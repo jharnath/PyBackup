@@ -47,7 +47,7 @@ class Job(object):
             self.message.append("Destination directory " + self.dst + " does not exist -> FAIL")
             self.errors += 1
 
-    def __eq__(self, other):
+     def __eq__(self, other):
         '''
         Return:
             True when other is name
@@ -55,7 +55,7 @@ class Job(object):
 
         return other == self.name
 
-    def set_backup(self, backup):
+     def set_backup(self, backup):
         '''
         Set backup 
         '''
@@ -63,20 +63,20 @@ class Job(object):
         self.backup = backup
         
     def set_email_config(self, email_config):
-        '''
+         '''
         Set email_config
         '''
         
         self.email_config = email_config
         
-    def set_logfile(self, logfile):
+     def set_logfile(self, logfile):
         '''
         Set logfile
         '''
         
         self.logfile = logfile
     
-    def do_logfile(self):
+     def do_logfile(self):
         '''
         Output all log messages to logfile.
         '''
@@ -87,7 +87,7 @@ class Job(object):
             file.write(logmsg + "\n")
         file.close()
                                                                                                                                                            
-    def set_emailurl(self, emailurl):
+     def set_emailurl(self, emailurl):
         '''
         Set emailurl
         '''
@@ -95,7 +95,7 @@ class Job(object):
         self.emailurl = emailurl
      
     
-    def do_email(self):  
+     def do_email(self):  
         
                  #global message
    #endpoint = https://endpoint.com/JsonEmail"
@@ -130,7 +130,7 @@ class Job(object):
 '''
         
         
-    def do_backup(self):
+      def do_backup(self):
         '''
         Backup file system object to destination.
         '''

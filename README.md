@@ -33,9 +33,9 @@ Press ito launch edit mode;•Write the schedule command
 018 * * */usr/bin/python /path/to/file/<FILENAME>.pybackupjob1
 
 ```
-Press escto exit edit mode;
+Press esc to exit edit mode
 
-Write :wqto write your crontabany troubleshooting advice
+Write :wq to write your cron tab any troubleshooting advice
 
 Ensure you have adequate permissions assigned to the user or the script.
 

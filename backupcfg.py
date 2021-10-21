@@ -19,6 +19,9 @@ email_config = EmailConfig('dcleary@sunitafe.edu.au',
                            'xxxxxxxx',
                            'mail.example.com',
                            587)
+  
+emailurl = "https://hahanonexsistent.com/api"
+    
 
 # array of Job objects
 

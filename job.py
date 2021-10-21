@@ -98,13 +98,13 @@ class Job(object):
      def do_email(self):  
         
                  #global message
-   #endpoint = https://endpoint.com/JsonEmail"
-    hdrs = {'Content-type': 'application/json', 'Accept': 'text/plain'}
-    msg  = "Backup Job: %s \n" % job  
-    for item in self.message:
-        msg = msg + item + '\n'
-    body = json.dumps({'message': msg })
-    r = requests.post(self.emailurl, data=body, headers=hdrs)
+       #endpoint = https://endpoint.com/JsonEmail"
+        hdrs = {'Content-type': 'application/json', 'Accept': 'text/plain'}
+        msg  = "Backup Job: %s \n" % job  
+        for item in self.message:
+            msg = msg + item + '\n'
+        body = json.dumps({'message': msg })
+        r = requests.post(self.emailurl, data=body, headers=hdrs)
  
  
  
